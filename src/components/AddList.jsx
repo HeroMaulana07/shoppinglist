@@ -32,6 +32,7 @@ export default function AddList({ onAddItem }) {
             <select
               className="w-full h-12 rounded-2xl border bg-white/10 border-white/10 text-white text-sm cursor-pointer focus:ring-teal-500 focus:border-teal-500 focus:outline-none focus:ring-1 focus:border appearance-none text-center"
               value={quantity}
+              style={{textAlign: 'center'}}
               onChange={(e) => setQuantity(Number(e.target.value))}
             >
               {QuantityItems}

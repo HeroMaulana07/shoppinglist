@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+  preferredstrategy: "pseudoelements";
+}
+
+@theme {
+  --font-JakartaSans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  @apply min-h-screen flex flex-col items-center justify-center p-4 font-JakartaSans;
+  background: linear-gradient(135deg, #0d2b2d 0%, #1a4d4f 100%);
+}
+
+@utility container {
+  margin-inline: auto; /* center: true */
+  padding-inline: 1rem; /* 16px */
+}
+
+@layer utilities {
+  .bgList {
+    @apply flex items-center justify-between p-5 rounded-2xl transition-all border-teal-500/20 cursor-pointer;
+  }
+  .glass-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .liquid-shadow {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  .vibrant-accent {
+    background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
+  }
+
+  .mybg {
+    @apply bg-linear-120 from-teal-700 to-black/50;
+    background-size: 200% 200%;
+    animation: gradientMove 7s linear infinite;
+    box-shadow: 0 0 20px rgba(65, 246, 59, 0.5);
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}

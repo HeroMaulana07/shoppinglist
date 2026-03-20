@@ -12,7 +12,7 @@ export default function AddList({ onAddItem }) {
     const newItem = { name, quantity, checked: false, id: Date.now() };
     onAddItem(newItem);
 
-    setName(" ");
+    setName("");
     setQuantity(1);
   }
 
